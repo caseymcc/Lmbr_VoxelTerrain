@@ -1,0 +1,45 @@
+{
+    "name": "voxigen",
+    "source": "@GEM@/External/voxigen",
+    "description": "Voxel handling library",
+    "includes": [
+        "include",
+        "generic",
+        "imglib"
+    ],
+    "defines": [
+        "VOXIGEN_STATIC_DEFINE",
+        "VOXIGEN_USE_FILESYSTEM=1",
+        "GENERIC_DISABLE_ATTRIBUTE",
+        "IMGLIB_USE_FILESYSTEM=1",
+        "IMGLIB_EIGEN",
+        "IMGLIB_PNG"
+    ],
+    "lib_required": "True",
+    "platform": {
+        "win_x64_vs2015": {
+            "libpath_debug": [
+                "build/lib/Debug"
+            ],
+            "lib_debug": [
+                "voxigend.lib",
+                "genericd.lib",
+                "imglibd.lib",
+                "zlibd.lib",
+                "pngd.lib"
+            ],
+            "libpath_release": [
+                "build/lib/Release"
+            ],
+            "lib_release": [
+                "voxigen.lib",
+                "generic.lib",
+                "imglib.lib",
+                "zlib.lib",
+                "png.lib"
+            ]
+        },
+        "win_x64_vs2017": "@win_x64_vs2015",
+        "win_x64_clang": "@win_x64_vs2015"
+    }
+}

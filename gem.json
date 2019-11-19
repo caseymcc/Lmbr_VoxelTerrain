@@ -1,0 +1,20 @@
+{
+    "GemFormatVersion": 4,
+    "Uuid": "00310bf422bd4e0b8d298690636640b2",
+    "Name": "VoxelTerrain",
+    "DisplayName": "VoxelTerrain",
+    "Version": "0.1.0",
+    "Summary": "Voxel Terrain support using voxigen",
+    "Tags": ["Untagged"],
+    "IconPath": "preview.png",
+    "Modules": [
+        {
+            "Type": "GameModule"
+        },
+        {
+            "Name": "Editor",
+            "Type": "EditorModule",
+            "Extends": "GameModule"
+        }
+    ]
+}

@@ -1,0 +1,28 @@
+{
+    "name": "HastyNoise",
+    "source": "@GEM@/External/HastyNoise",
+    "description": "SIMD Noise library",
+    "includes": [
+        "."
+    ],
+    "defines": [],
+    "lib_required": "True",
+    "platform": {
+        "win_x64_vs2015": {
+            "importlibpath": [
+                "build/Release"
+            ],
+            "sharedlibpath": [
+                "build/Release"
+            ],
+            "import": [
+                "HastyNoise.lib"
+            ],
+            "shared": [
+                "HastyNoise.dll"
+            ]
+        },
+        "win_x64_vs2017": "@win_x64_vs2015",
+        "win_x64_clang": "@win_x64_vs2015"
+    }
+}

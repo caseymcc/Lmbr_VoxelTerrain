@@ -1,0 +1,9 @@
+{
+    "name": "glm",
+    "source": "@GEM@/External/glm",
+    "description": "OpenGL Mathematics (GLM)",
+    "header_only": "True",
+    "includes": ["."],
+    "defines": [],
+    "lib_required": "False"
+}

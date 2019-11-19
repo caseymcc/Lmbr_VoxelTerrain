@@ -1,0 +1,67 @@
+
+def build(bld):
+    bld.CryEngineStaticLibrary(
+        target              = 'VoxelTerrainLib',
+        
+        disable_pch             = True,
+        file_list               = ['voxelterrainlib.waf_files'],
+        test_all_file_list      = ['voxelterrainlib_tests.waf_files'],
+
+        features                = ['qt5'],
+        vs_filter               = 'Gems',
+
+        includes                = ['.',
+            bld.Path('Code/CryEngine'),
+            bld.Path('Code/CryEngine/Cry3DEngine'),
+            bld.Path('Code/Sandbox'),
+            bld.Path('Code/Sandbox/Editor'),
+            bld.Path('Code/Sandbox/Editor/Include'),
+            bld.Path('Code/Sandbox/Plugins/EditorCommon')
+        ],
+        
+        defines                 = ['FORCE_STANDARD_ASSERT'],
+        use                     = ['AzCore', 'AzGameFramework', 'Cry3DEngine', 'EditorCommon', 'EditorCore', 'EditorLib'],
+        uselib                  = ['AWS_CPP_SDK_ALL', 'GLM', 'VOXIGEN', 'HASTYNOISE', 'QT5CORE', 'QT5GUI', 'QT5WIDGETS']
+    )
+
+    bld.DefineGem(
+        # General
+        disable_pch             = True,
+        file_list               = ['voxelterrain.waf_files'],
+        
+        # Testing
+        test_all_file_list      = ['voxelterrain_tests.waf_files'],
+
+        includes                = ['.',
+            bld.Path('Code/CryEngine'),
+            bld.Path('Code/CryEngine/Cry3DEngine'),
+            bld.Path('Code/Sandbox'),
+            bld.Path('Code/Sandbox/Editor'),
+            bld.Path('Code/Sandbox/Editor/Include'),
+            bld.Path('Code/Sandbox/Plugins/EditorCommon')
+        ],
+        
+        defines                 = ['FORCE_STANDARD_ASSERT'],
+        use                     = ['AzCore', 'AzGameFramework', 'Cry3DEngine', 'VoxelTerrainLib'],
+        uselib                  = ['AWS_CPP_SDK_ALL', 'GLM', 'VOXIGEN', 'HASTYNOISE', 'QT5CORE', 'QT5GUI', 'QT5WIDGETS'],
+
+         Editor = dict(
+            disable_pch         = True,
+            file_list           = ['voxelterrain_editor.waf_files'],
+            test_all_file_list  = ['voxelterrain_editor_tests.waf_files'],
+            
+
+            includes = ['.',
+                bld.Path('Code/CryEngine'),
+                bld.Path('Code/CryEngine/Cry3DEngine'),
+                bld.Path('Code/Sandbox'),
+                bld.Path('Code/Sandbox/Editor'),
+                bld.Path('Code/Sandbox/Editor/Include'),
+                bld.Path('Code/Sandbox/Plugins/EditorCommon')
+            ],
+
+            defines = ['FORCE_STANDARD_ASSERT', 'EDITOR_MODULE'],
+            use = ['AzCore', 'AzGameFramework', 'Cry3DEngine', 'VoxelTerrainLib'],
+            uselib = ['AWS_CPP_SDK_ALL', 'QT5CORE', 'QT5GUI', 'QT5WIDGETS']
+        )
+    )

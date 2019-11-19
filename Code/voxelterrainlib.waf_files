@@ -1,0 +1,20 @@
+{
+    "auto": {
+        "Include": [
+        ],
+        "Source": [
+            "Source/alignedVerticesBuffer.h",
+            "Source/meshHandler.cpp",
+            "Source/meshHandler.h",
+            "Source/editorVoxelTerrain.cpp",
+            "Source/editorVoxelTerrain.h",
+            "Source/voxelTerrain.cpp",
+            "Source/voxelTerrain.h",
+            "Source/voxelTerrainChunk.cpp",
+            "Source/voxelTerrainChunk.h",
+            "Source/voxelTerrainRegion.cpp",
+            "Source/voxelTerrainRegion.h",
+            "Source/voxigenDefine.h"
+        ]
+    }
+}

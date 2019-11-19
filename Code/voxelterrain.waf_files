@@ -1,0 +1,14 @@
+{
+    "auto": {
+        "Include": [
+            "Include/VoxelTerrain/VoxelTerrainBus.h"
+        ],
+        "Source": [
+            "Source/terxturePackAsset.h",
+            "Source/VoxelTerrainModule.cpp",
+            "Source/VoxelTerrainModule.h",
+            "Source/VoxelTerrainSystemComponent.cpp",
+            "Source/VoxelTerrainSystemComponent.h"
+        ]
+    }
+}
